@@ -19,9 +19,28 @@ library("occlist")
 
 ## Get a spp list from OBIS
 
-```{r eval=FALSE}
+via the `spocc` package
+
+```{r}
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
-occ_list(geometry = geometry, from = "obis")
+occ_list(geometry = geometry, from = "obis", limit = 20)
+```
+
+## Get species lists from GBIF
+
+using `rgbif`
+
+Search by geometry
+
+```{r}
+geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
+occ_list_gbif(geometry = geometry, limit = 20)
+```
+
+Search by country
+
+```{r}
+(res <- occ_list_gbif(country = 'US', limit = 20))
 ```
 
 ## Meta

@@ -11,7 +11,16 @@ Get a species list
 }
 \examples{
 \dontrun{
-occ_list(geometry = "")
+geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
+
+# just gbif
+occ_list(geometry = geometry)
+
+# gbif, obis, and bison
+res <- occ_list(geometry = geometry, from = c('gbif', 'obis', 'ebird'), limit = 20)
+res$gbif
+res$obis
+res$ebird
 }
 }
 
