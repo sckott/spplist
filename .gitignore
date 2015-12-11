@@ -1,0 +1,6 @@
+.Rproj.user
+.Rhistory
+.RData
+.httr-oauth
+inst/examples/iucn_dat.csv
+inst/examples/worms_sample.csv
