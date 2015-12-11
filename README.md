@@ -8,18 +8,21 @@ occlist
 
 ## Installation
 
-```{r eval=FALSE}
+
+```r
 install.packages("devtools")
 devtools::install_github("sckott/occlist")
 ```
 
-```{r}
+
+```r
 library("occlist")
 ```
 
 ## Get a spp list from OBIS
 
-```{r eval=FALSE}
+
+```r
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
 occ_list(geometry = geometry, from = "obis")
 ```
