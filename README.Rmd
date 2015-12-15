@@ -1,20 +1,20 @@
-occlist
+spplist
 =======
 
-[![Build Status](https://api.travis-ci.org/sckott/occlist.png)](https://travis-ci.org/sckott/occlist)
-[![codecov.io](https://codecov.io/github/sckott/occlist/coverage.svg?branch=master)](https://codecov.io/github/sckott/occlist?branch=master)
+[![Build Status](https://api.travis-ci.org/sckott/spplist.png)](https://travis-ci.org/sckott/spplist)
+[![codecov.io](https://codecov.io/github/sckott/spplist/coverage.svg?branch=master)](https://codecov.io/github/sckott/spplist?branch=master)
 
-`occlist` = get you some species lists
+`spplist` = get you some species lists
 
 ## Installation
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("sckott/occlist")
+devtools::install_github("sckott/spplist")
 ```
 
 ```{r}
-library("occlist")
+library("spplist")
 ```
 
 ## Get a spp list from OBIS
@@ -45,7 +45,7 @@ Search by country
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/sckott/occlist/issues).
+* Please [report any issues or bugs](https://github.com/sckott/spplist/issues).
 * License: MIT
-* Get citation information for `occlist` in R doing `citation(package = 'occlist')`
+* Get citation information for `spplist` in R doing `citation(package = 'spplist')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

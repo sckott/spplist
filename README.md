@@ -1,22 +1,22 @@
-occlist
+spplist
 =======
 
-[![Build Status](https://api.travis-ci.org/sckott/occlist.png)](https://travis-ci.org/sckott/occlist)
-[![codecov.io](https://codecov.io/github/sckott/occlist/coverage.svg?branch=master)](https://codecov.io/github/sckott/occlist?branch=master)
+[![Build Status](https://api.travis-ci.org/sckott/spplist.png)](https://travis-ci.org/sckott/spplist)
+[![codecov.io](https://codecov.io/github/sckott/spplist/coverage.svg?branch=master)](https://codecov.io/github/sckott/spplist?branch=master)
 
-`occlist` = get you some species lists
+`spplist` = get you some species lists
 
 ## Installation
 
 
 ```r
 install.packages("devtools")
-devtools::install_github("sckott/occlist")
+devtools::install_github("sckott/spplist")
 ```
 
 
 ```r
-library("occlist")
+library("spplist")
 ```
 
 ## Get a spp list from OBIS
@@ -54,12 +54,12 @@ occ_list_gbif(geometry = geometry, limit = 20)
 ```
 
 ```
-##  [1] "Cyclamen purpurascens"  "Hedera helix"          
-##  [3] "Primula vulgaris"       "Viscum album"          
-##  [5] "Polystichum braunii"    "Lunaria rediviva"      
-##  [7] "Asplenium trichomanes"  "Equisetum hyemale"     
-##  [9] "Tussilago farfara"      "Polypodium virginianum"
-## [11] "Polystichum aculeatum"  "Saxifraga cotyledon"
+##  [1] "Asplenium trichomanes"  "Cyclamen purpurascens" 
+##  [3] "Equisetum hyemale"      "Hedera helix"          
+##  [5] "Lunaria rediviva"       "Polypodium virginianum"
+##  [7] "Polystichum aculeatum"  "Polystichum braunii"   
+##  [9] "Primula vulgaris"       "Saxifraga cotyledon"   
+## [11] "Tussilago farfara"      "Viscum album"
 ```
 
 Search by country
@@ -70,21 +70,21 @@ Search by country
 ```
 
 ```
-##  [1] "Elgaria multicarinata"    "Thryothorus ludovicianus"
-##  [3] "Conidae"                  "Neverita"                
-##  [5] "Melongenidae"             "Streptopelia decaocto"   
-##  [7] "Homo sapiens"             "Setophaga coronata"      
-##  [9] "Aloe arborescens"         "Anas strepera"           
-## [11] "Schinus molle"            "Fulica americana"        
-## [13] "Larus fuscus"             "Sigmodon hispidus"       
-## [15] "Ilex opaca"               "Cardinalis cardinalis"   
-## [17] "Auriparus flaviceps"      "Lynx rufus"              
-## [19] "Lestes alacer"
+##  [1] "Aloe arborescens"         "Anas strepera"           
+##  [3] "Auriparus flaviceps"      "Cardinalis cardinalis"   
+##  [5] "Conidae"                  "Elgaria multicarinata"   
+##  [7] "Fulica americana"         "Homo sapiens"            
+##  [9] "Ilex opaca"               "Larus fuscus"            
+## [11] "Lestes alacer"            "Lynx rufus"              
+## [13] "Melongenidae"             "Neverita"                
+## [15] "Schinus molle"            "Setophaga coronata"      
+## [17] "Sigmodon hispidus"        "Streptopelia decaocto"   
+## [19] "Thryothorus ludovicianus"
 ```
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/sckott/occlist/issues).
+* Please [report any issues or bugs](https://github.com/sckott/spplist/issues).
 * License: MIT
-* Get citation information for `occlist` in R doing `citation(package = 'occlist')`
+* Get citation information for `spplist` in R doing `citation(package = 'spplist')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
