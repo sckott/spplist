@@ -1,14 +1,15 @@
-Package: occlist
+Package: spplist
 Title: Get Species Lists from Many Data Sources
 Description: Get species lists form many data sources.
 Version: 0.0.1.9500
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
-URL: https://github.com/ropensci/occlist
-BugReports: https://github.com/ropensci/occlist/issues
+URL: https://github.com/sckott/spplist
+BugReports: https://github.com/sckott/spplist/issues
 Imports:
-    spocc
+    spocc,
+    rgbif
 Suggests:
     testthat
 RoxygenNote: 5.0.1

@@ -1,8 +1,9 @@
 #' Species lists getter
 #'
 #' @importFrom spocc occ occ2df
-#' @name occlist-package
-#' @aliases occlist
+#' @importFrom rgbif occ_search
+#' @name spplist-package
+#' @aliases spplist
 #' @docType package
 #' @keywords package
 NULL

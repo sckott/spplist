@@ -18,7 +18,7 @@ Get a species list
 \examples{
 \dontrun{
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
-occ_list_gbif(geometry = geometry)
+occ_list_gbif(geometry = geometry, limit = 20)
 
 # search by country
 (res <- occ_list_gbif(country = 'US', limit = 20))

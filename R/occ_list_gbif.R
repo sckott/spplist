@@ -3,7 +3,7 @@
 #' @export
 #' @examples \dontrun{
 #' geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
-#' occ_list_gbif(geometry = geometry)
+#' occ_list_gbif(geometry = geometry, limit = 20)
 #'
 #' # search by country
 #' (res <- occ_list_gbif(country = 'US', limit = 20))
@@ -24,5 +24,5 @@ occ_list_gbif <- function(country = NULL, publishingCountry = NULL, typeStatus =
     collectionCode = collectionCode, search = search, limit = limit, start = start)
   df <- res$data
   if (!NROW(df) > 0) stop("No results found", call. = FALSE)
-  unique(df$name)
+  sort(unique(df$name))
 }

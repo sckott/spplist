@@ -2,5 +2,6 @@
 
 export(occ_list)
 export(occ_list_gbif)
+importFrom(rgbif,occ_search)
 importFrom(spocc,occ)
 importFrom(spocc,occ2df)
