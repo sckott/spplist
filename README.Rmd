@@ -6,6 +6,15 @@ spplist
 
 `spplist` = get you some species lists
 
+here's how i'm thinking about the workflow:
+
+* search, retrieve list
+* parse to certain rank (limited to spp vs genus)
+* clean names - capitalization, etc.
+* write to csv/etc.
+
+Thoughts?
+
 ## Installation
 
 ```{r eval=FALSE}
