@@ -28,19 +28,83 @@ devtools::install_github("ropenscilabs/spplist")
 library("spplist")
 ```
 
-## Get a spp list from OBIS
+## Get a spp list from iDigBio
 
 via the `spocc` package
 
 
 ```r
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
-occ_list(geometry = geometry, from = "obis", limit = 20)
+spp_list(geometry = geometry, from = "idigbio", limit = 20)
 ```
 
 ```
-## Error in match.arg(from, choices = c("gbif", "bison", "inat", "ebird", : 'arg' should be one of "gbif", "bison", "inat", "ebird", "ecoengine", "antweb", "vertnet", "idigbio"
+## $idigbio
+##  [1] "agonum viduum"                          
+##  [2] "anthidiellum (ananthidiellum) strigatum"
+##  [3] "bembidion articulatum"                  
+##  [4] "cardamine amara"                        
+##  [5] "clitocybe geotropa"                     
+##  [6] "collema auriforme"                      
+##  [7] "cortinarius subtortus"                  
+##  [8] "dicentrarchus labrax"                   
+##  [9] "graptodytes granularis"                 
+## [10] "lecanora mughicola"                     
+## [11] "lecidea turgidula"                      
+## [12] "microtus subterraneus incertoides"      
+## [13] "mus musculus domesticus"                
+## [14] "ochrolechia alboflavescens"             
+## [15] "philonthus carbonarius"                 
+## [16] "physconia perisidiosa"                  
+## [17] "rhizocarpon kakurgon"                   
+## [18] "rhodymenia ligulata"                    
+## [19] "zeus faber"
 ```
+
+Get a list from many sources
+
+
+```r
+geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
+spp_list(geometry = geometry, from = c("idigbio", "inat"), limit = 20)
+```
+
+```
+## $idigbio
+##  [1] "agonum viduum"                          
+##  [2] "anthidiellum (ananthidiellum) strigatum"
+##  [3] "bembidion articulatum"                  
+##  [4] "cardamine amara"                        
+##  [5] "clitocybe geotropa"                     
+##  [6] "collema auriforme"                      
+##  [7] "cortinarius subtortus"                  
+##  [8] "dicentrarchus labrax"                   
+##  [9] "graptodytes granularis"                 
+## [10] "lecanora mughicola"                     
+## [11] "lecidea turgidula"                      
+## [12] "microtus subterraneus incertoides"      
+## [13] "mus musculus domesticus"                
+## [14] "ochrolechia alboflavescens"             
+## [15] "philonthus carbonarius"                 
+## [16] "physconia perisidiosa"                  
+## [17] "rhizocarpon kakurgon"                   
+## [18] "rhodymenia ligulata"                    
+## [19] "zeus faber"                             
+## 
+## $inat
+##  [1] "Ajuga pyramidalis"           "Asarum europaeum europaeum" 
+##  [3] "Buteo buteo"                 "Cryptocephalus sericeus"    
+##  [5] "Dasyphora albofasciata"      "Exorista rustica"           
+##  [7] "Lacerta bilineata bilineata" "Lacerta viridis viridis"    
+##  [9] "Meromyza femorata"           "Morus alba"                 
+## [11] "Populus nigra"               "Populus x canescens"        
+## [13] "Primula vulgaris"            "Pyrausta despicata"         
+## [15] "Salix elaeagnos"             "Sciurus vulgaris"
+```
+
+> note how the limit parameter doesn't necessarily give you the number you request. Rather, 
+that number is the max occurrence records pulled down, and there could be duplicate 
+names.
 
 ## Get species lists from GBIF
 
@@ -51,7 +115,7 @@ Search by geometry
 
 ```r
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
-occ_list_gbif(geometry = geometry, limit = 20)
+spp_list_gbif(geometry = geometry, limit = 20)
 ```
 
 ```
@@ -71,7 +135,7 @@ Search by country
 
 
 ```r
-(res <- occ_list_gbif(country = 'US', limit = 20))
+(res <- spp_list_gbif(country = 'US', limit = 20))
 ```
 
 ```
