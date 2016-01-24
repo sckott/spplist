@@ -1,8 +1,8 @@
 spplist
 =======
 
-[![Build Status](https://api.travis-ci.org/sckott/spplist.png)](https://travis-ci.org/sckott/spplist)
-[![codecov.io](https://codecov.io/github/sckott/spplist/coverage.svg?branch=master)](https://codecov.io/github/sckott/spplist?branch=master)
+[![Build Status](https://api.travis-ci.org/ropenscilabs/spplist.png)](https://travis-ci.org/ropenscilabs/spplist)
+[![codecov.io](https://codecov.io/github/ropenscilabs/spplist/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/spplist?branch=master)
 
 `spplist` = get you some species lists
 
@@ -39,15 +39,7 @@ occ_list(geometry = geometry, from = "obis", limit = 20)
 ```
 
 ```
-## $obis
-## [1] "Cottus gobio"                            
-## [2] "Ameira"                                  
-## [3] "Ameira parvula"                          
-## [4] "Asellopsis"                              
-## [5] "Paramphiascella coulli"                  
-## [6] "Alsidium corallinum"                     
-## [7] "Cladostephus spongiosus f. verticillatus"
-## [8] "Enhydrosoma caeni"
+## Error in match.arg(from, choices = c("gbif", "bison", "inat", "ebird", : 'arg' should be one of "gbif", "bison", "inat", "ebird", "ecoengine", "antweb", "vertnet", "idigbio"
 ```
 
 ## Get species lists from GBIF
@@ -63,12 +55,16 @@ occ_list_gbif(geometry = geometry, limit = 20)
 ```
 
 ```
-##  [1] "Asplenium trichomanes"  "Cyclamen purpurascens" 
-##  [3] "Equisetum hyemale"      "Hedera helix"          
-##  [5] "Lunaria rediviva"       "Polypodium virginianum"
-##  [7] "Polystichum aculeatum"  "Polystichum braunii"   
-##  [9] "Primula vulgaris"       "Saxifraga cotyledon"   
-## [11] "Tussilago farfara"      "Viscum album"
+##  [1] "Anas platyrhynchos"    "Anser anser"          
+##  [3] "Ardea cinerea"         "Aythya ferina"        
+##  [5] "Aythya fuligula"       "Buteo buteo"          
+##  [7] "Cinclus cinclus"       "Corvus corone"        
+##  [9] "Cyclamen purpurascens" "Fulica atra"          
+## [11] "Hedera helix"          "Mergus merganser"     
+## [13] "Netta rufina"          "Phalacrocorax carbo"  
+## [15] "Podiceps cristatus"    "Primula vulgaris"     
+## [17] "Rubus laciniatus"      "Salamandra salamandra"
+## [19] "Spinus spinus"
 ```
 
 Search by country
@@ -79,16 +75,16 @@ Search by country
 ```
 
 ```
-##  [1] "Aloe arborescens"         "Anas strepera"           
-##  [3] "Auriparus flaviceps"      "Cardinalis cardinalis"   
-##  [5] "Conidae"                  "Elgaria multicarinata"   
-##  [7] "Fulica americana"         "Homo sapiens"            
-##  [9] "Ilex opaca"               "Larus fuscus"            
-## [11] "Lestes alacer"            "Lynx rufus"              
-## [13] "Melongenidae"             "Neverita"                
-## [15] "Schinus molle"            "Setophaga coronata"      
-## [17] "Sigmodon hispidus"        "Streptopelia decaocto"   
-## [19] "Thryothorus ludovicianus"
+##  [1] "Acer rubrum"           "Aureoboletus"         
+##  [3] "Buteo jamaicensis"     "Calycopis cecrops"    
+##  [5] "Cathartes aura"        "Centaurea melitensis" 
+##  [7] "Cryptochiton stelleri" "Fagus grandifolia"    
+##  [9] "Homo sapiens"          "Marasmius plicatulus" 
+## [11] "Melospiza melodia"     "Mephitis mephitis"    
+## [13] "Mycena maculata"       "Pipilo maculatus"     
+## [15] "Regulus calendula"     "Sayornis saya"        
+## [17] "Sciurus carolinensis"  "Strix varia"          
+## [19] "Tamias striatus"
 ```
 
 ## Meta

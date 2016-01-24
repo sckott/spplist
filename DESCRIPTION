@@ -5,8 +5,8 @@ Version: 0.0.1.9500
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
-URL: https://github.com/sckott/spplist
-BugReports: https://github.com/sckott/spplist/issues
+URL: https://github.com/ropenscilabs/spplist
+BugReports: https://github.com/ropenscilabs/spplist/issues
 Imports:
     spocc,
     rgbif

@@ -1,8 +1,8 @@
 spplist
 =======
 
-[![Build Status](https://api.travis-ci.org/sckott/spplist.png)](https://travis-ci.org/sckott/spplist)
-[![codecov.io](https://codecov.io/github/sckott/spplist/coverage.svg?branch=master)](https://codecov.io/github/sckott/spplist?branch=master)
+[![Build Status](https://api.travis-ci.org/ropenscilabs/spplist.png)](https://travis-ci.org/ropenscilabs/spplist)
+[![codecov.io](https://codecov.io/github/ropenscilabs/spplist/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/spplist?branch=master)
 
 `spplist` = get you some species lists
 
