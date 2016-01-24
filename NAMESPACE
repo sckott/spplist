@@ -2,6 +2,7 @@
 
 export(occ_list)
 export(occ_list_gbif)
+export(ranker)
 importFrom(rgbif,occ_search)
 importFrom(spocc,occ)
 importFrom(spocc,occ2df)

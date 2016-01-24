@@ -19,7 +19,7 @@ Thoughts?
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("sckott/spplist")
+devtools::install_github("ropenscilabs/spplist")
 ```
 
 ```{r}
@@ -54,7 +54,7 @@ Search by country
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/sckott/spplist/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/spplist/issues).
 * License: MIT
 * Get citation information for `spplist` in R doing `citation(package = 'spplist')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
