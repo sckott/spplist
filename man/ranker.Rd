@@ -6,6 +6,11 @@
 \usage{
 ranker(x, by = "species")
 }
+\arguments{
+\item{x}{input}
+
+\item{by}{(character) By something, only option now: "species"}
+}
 \description{
 Clean a species list
 }

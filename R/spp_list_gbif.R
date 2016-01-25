@@ -1,10 +1,14 @@
 #' Get a species list via rgbif
+#' 
+#' MIGHT DROP THIS FXN
 #'
 #' @export
+#' @param query (character) Passed to \code{scientificName} parameter in 
+#' \code{\link[rgbif]{occ_search}}
 #' @param geometry Searches for occurrences inside a polygon described in Well Known
-#'    Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
-#'    or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))
-#'     would be queried as \url{http://bit.ly/1BzNwDq}.
+#' Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
+#' or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))
+#' would be queried as \url{http://bit.ly/1BzNwDq}.
 #' @param limit Number of records to return. Default: 100. Maximum: 1000.
 #' @param ... Further args passed on to \code{\link[rgbif]{occ_search}}
 #' @return A data.frame or list
