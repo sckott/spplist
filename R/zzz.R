@@ -19,3 +19,7 @@ time_null <- function(x) {
 found_null <- function(x) {
   if (length(sc(x)) == 0) NULL else sum(unlist(sc(x)), na.rm = TRUE)
 }
+
+drop_zero <- function(x) x[vapply(x, nchar, 1) > 0]
+
+drop_na <- function(x) x[!vapply(x, is.na, logical(1))]

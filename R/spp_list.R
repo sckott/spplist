@@ -28,10 +28,9 @@
 #' spp_list(geometry = geometry)
 #' 
 #' # gbif, ecoengine and ebird
-#' res <- spp_list(geometry = geometry, from = c('gbif', 'ecoengine', 'ebird'), limit = 20)
+#' res <- spp_list(geometry = geometry, from = c('gbif', 'bison'), limit = 20)
 #' res$gbif
-#' res$ecoengine
-#' res$ebird
+#' res$bison
 #' 
 #' # pass on options to spocc::occ()
 #' res <- spp_list("Asteraceae", from = "gbif", gbifopts = list(country = 'US'))
@@ -42,11 +41,13 @@ spp_list <- function(query = NULL, from = "gbif", limit = 500, geometry = NULL, 
   res <- spocc::occ(query = query, from = from, geometry = geometry, limit = limit, ...)
   df <- spocc::occ2df(res)
   if (!NROW(df) > 0) stop("No results found", call. = FALSE)
-  lapply(split(df$name, df$prov), function(z) {
-    drop_na(drop_zero(sort(unique(z))))
-  })
+  dfsplit <- split(df$name, df$prov)
+  tmp <- Map(function(a, b) {
+    dtmp <- drop_na(drop_zero(sort(unique(a))))
+    list(
+      meta = list(source = b, query = query, geometry = geometry, returned = length(dtmp)), 
+      data = dtmp
+    )
+  }, dfsplit, names(dfsplit))
+  structure(tmp, class = "spplist")
 }
-
-drop_zero <- function(x) x[vapply(x, nchar, 1) > 0]
-
-drop_na <- function(x) x[!vapply(x, is.na, logical(1))]
