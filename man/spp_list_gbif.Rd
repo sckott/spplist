@@ -2,21 +2,32 @@
 % Please edit documentation in R/occ_list_gbif.R
 \name{spp_list_gbif}
 \alias{spp_list_gbif}
-\title{Get a species list}
+\title{Get a species list via rgbif}
 \usage{
-spp_list_gbif(country = NULL, publishingCountry = NULL, typeStatus = NULL,
-  lastInterpreted = NULL, continent = NULL, geometry = NULL,
-  recordedBy = NULL, basisOfRecord = NULL, datasetKey = NULL,
-  eventDate = NULL, year = NULL, month = NULL, decimalLatitude = NULL,
-  decimalLongitude = NULL, elevation = NULL, depth = NULL,
-  institutionCode = NULL, collectionCode = NULL, search = NULL,
-  limit = 500, start = 0)
+spp_list_gbif(query = NULL, geometry = NULL, limit = 500, ...)
+}
+\arguments{
+\item{geometry}{Searches for occurrences inside a polygon described in Well Known
+Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
+or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))
+ would be queried as \url{http://bit.ly/1BzNwDq}.}
+
+\item{limit}{Number of records to return. Default: 100. Maximum: 1000.}
+
+\item{...}{Further args passed on to \code{\link[rgbif]{occ_search}}}
+}
+\value{
+A data.frame or list
 }
 \description{
-Get a species list
+Get a species list via rgbif
 }
 \examples{
 \dontrun{
+spp_list_gbif("Helianthus", limit = 20)
+spp_list_gbif("Aves", limit = 20)
+spp_list_gbif("Mammalia", limit = 20)
+
 geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
 spp_list_gbif(geometry = geometry, limit = 20)
 

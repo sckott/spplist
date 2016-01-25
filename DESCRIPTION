@@ -1,15 +1,16 @@
 Package: spplist
 Title: Get Species Lists from Many Data Sources
-Description: Get species lists form many data sources.
-Version: 0.0.1.9700
+Description: Get species lists form many data sources, including any available via 
+    the spocc and rgbif packages.
+Version: 0.0.1.9900
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 URL: https://github.com/ropenscilabs/spplist
 BugReports: https://github.com/ropenscilabs/spplist/issues
 Imports:
-    spocc,
-    rgbif
+    spocc (>= 0.4.5),
+    rgbif (>= 0.9.0)
 Suggests:
     testthat
 RoxygenNote: 5.0.1

@@ -1,7 +1,18 @@
-#' Get a species list
+#' Get a species list via rgbif
 #'
 #' @export
+#' @param geometry Searches for occurrences inside a polygon described in Well Known
+#'    Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
+#'    or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))
+#'     would be queried as \url{http://bit.ly/1BzNwDq}.
+#' @param limit Number of records to return. Default: 100. Maximum: 1000.
+#' @param ... Further args passed on to \code{\link[rgbif]{occ_search}}
+#' @return A data.frame or list
 #' @examples \dontrun{
+#' spp_list_gbif("Helianthus", limit = 20)
+#' spp_list_gbif("Aves", limit = 20)
+#' spp_list_gbif("Mammalia", limit = 20)
+#' 
 #' geometry <- "POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"
 #' spp_list_gbif(geometry = geometry, limit = 20)
 #'
@@ -9,20 +20,9 @@
 #' (res <- spp_list_gbif(country = 'US', limit = 20))
 #' (res <- spp_list_gbif(country = 'CA', limit = 20))
 #' }
-spp_list_gbif <- function(country = NULL, publishingCountry = NULL, typeStatus = NULL,
-  lastInterpreted = NULL, continent = NULL, geometry = NULL, recordedBy = NULL,
-  basisOfRecord = NULL, datasetKey = NULL, eventDate = NULL, year = NULL, month = NULL,
-  decimalLatitude = NULL, decimalLongitude = NULL, elevation = NULL, depth = NULL,
-  institutionCode = NULL, collectionCode = NULL, search = NULL, limit = 500, start = 0) {
-
-  res <- rgbif::occ_search(country = country, publishingCountry = publishingCountry,
-    typeStatus = typeStatus, lastInterpreted = lastInterpreted, continent = continent,
-    geometry = geometry, recordedBy = recordedBy, basisOfRecord = basisOfRecord,
-    datasetKey = datasetKey, eventDate = eventDate, year = year, month = month,
-    decimalLatitude = decimalLatitude, decimalLongitude = decimalLongitude,
-    elevation = elevation, depth = depth, institutionCode = institutionCode,
-    collectionCode = collectionCode, search = search, limit = limit, start = start)
+spp_list_gbif <- function(query = NULL, geometry = NULL, limit = 500, ...) {
+  res <- rgbif::occ_search(scientificName = query, geometry = geometry, limit = limit, ...)
   df <- res$data
   if (!NROW(df) > 0) stop("No results found", call. = FALSE)
-  sort(unique(df$name))
+  drop_na(drop_zero(sort(unique(df$name))))
 }
