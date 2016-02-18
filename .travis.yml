@@ -4,8 +4,8 @@ sudo: false
 
 cache: packages
 
-before_script:
-  - sudo apt-get install -y libv8-dev
+apt_packages:
+  - libv8-dev
 
 notifications:
   email:
