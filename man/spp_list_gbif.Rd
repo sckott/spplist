@@ -39,4 +39,3 @@ spp_list_gbif(geometry = geometry, limit = 20)
 (res <- spp_list_gbif(country = 'CA', limit = 20))
 }
 }
-

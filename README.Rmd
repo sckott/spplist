@@ -1,8 +1,8 @@
 spplist
 =======
 
-[![Build Status](https://api.travis-ci.org/ropenscilabs/spplist.png)](https://travis-ci.org/ropenscilabs/spplist)
-[![codecov.io](https://codecov.io/github/ropenscilabs/spplist/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/spplist?branch=master)
+[![Build Status](https://api.travis-ci.org/sckott/spplist.png)](https://travis-ci.org/sckott/spplist)
+[![codecov.io](https://codecov.io/github/sckott/spplist/coverage.svg?branch=master)](https://codecov.io/github/sckott/spplist?branch=master)
 
 `spplist` = get you some species lists
 
@@ -18,8 +18,7 @@ Thoughts?
 ## Installation
 
 ```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("ropenscilabs/spplist")
+remotes::install_github("sckott/spplist")
 ```
 
 ```{r}
@@ -65,7 +64,7 @@ Search by country
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/spplist/issues).
+* Please [report any issues or bugs](https://github.com/sckott/spplist/issues).
 * License: MIT
 * Get citation information for `spplist` in R doing `citation(package = 'spplist')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

@@ -53,4 +53,3 @@ res <- spp_list("Accipiter", from = "vertnet", vertnetopts = list(stateprovince 
 res <- spp_list(from = "inat", geometry = c(-125.0,38.4,-121.8,40.9))
 }
 }
-

@@ -20,4 +20,3 @@ Clean a species list
 ranker(res, "species")
 }
 }
-

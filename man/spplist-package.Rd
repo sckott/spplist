@@ -2,11 +2,7 @@
 % Please edit documentation in R/spplist-package.R
 \docType{package}
 \name{spplist-package}
-\alias{spplist}
 \alias{spplist-package}
+\alias{spplist}
 \title{Species lists getter}
-\description{
-Species lists getter
-}
 \keyword{package}
-
