@@ -4,5 +4,8 @@
 \name{spplist-package}
 \alias{spplist-package}
 \alias{spplist}
-\title{Species lists getter}
+\title{spplist}
+\description{
+Species lists getter
+}
 \keyword{package}
