@@ -53,9 +53,9 @@ spp_list(geometry = geometry, from = c("idigbio", "inat"), limit = 20)
 
 ```
 ## <Species list>
-## No. Returned: 38
+## No. Returned: 36
 ##   idigbio: 19
-##   inat: 19
+##   inat: 17
 ```
 
 > note how the limit parameter doesn't necessarily give you the number you request. Rather, 
@@ -116,4 +116,4 @@ Search by country
 * Please [report any issues or bugs](https://github.com/sckott/spplist/issues).
 * License: MIT
 * Get citation information for `spplist` in R doing `citation(package = 'spplist')`
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that the spplist project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

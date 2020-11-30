@@ -11,3 +11,5 @@ NEWS.md
 ^CONDUCT\.md$
 ^codemeta\.json$
 Makefile
+^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
