@@ -83,33 +83,29 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"sckott/spplist"</span>)
-</pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/sckott/spplist">"spplist"</a></span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"sckott/spplist"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/sckott/spplist">"spplist"</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="get-a-spp-list-from-idigbio" class="section level2">
 <h2 class="hasAnchor">
 <a href="#get-a-spp-list-from-idigbio" class="anchor"></a>Get a spp list from iDigBio</h2>
 <p>via the <code>spocc</code> package</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
-<span class="fu"><a href="reference/spp_list.html">spp_list</a></span>(geometry = <span class="kw">geometry</span>, from = <span class="st">"idigbio"</span>, limit = <span class="fl">20</span>)
-</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
+<span class="fu"><a href="reference/spp_list.html">spp_list</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span>, from <span class="op">=</span> <span class="st">"idigbio"</span>, limit <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></code></pre></div>
 <pre><code>## &lt;Species list&gt;
 ## No. Returned: 19
 ##   idigbio: 19</code></pre>
 <p>Get a list from many sources</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
-<span class="fu"><a href="reference/spp_list.html">spp_list</a></span>(geometry = <span class="kw">geometry</span>, from = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"idigbio"</span>, <span class="st">"inat"</span>), limit = <span class="fl">20</span>)
-</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
+<span class="fu"><a href="reference/spp_list.html">spp_list</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"idigbio"</span>, <span class="st">"inat"</span><span class="op">)</span>, limit <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></code></pre></div>
 <pre><code>## &lt;Species list&gt;
-## No. Returned: 38
+## No. Returned: 36
 ##   idigbio: 19
-##   inat: 19</code></pre>
+##   inat: 17</code></pre>
 <blockquote>
 <p>note how the limit parameter doesn’t necessarily give you the number you request. Rather, that number is the max occurrence records pulled down, and there could be duplicate names.</p>
 </blockquote>
@@ -119,19 +115,17 @@
 <a href="#get-species-lists-from-gbif" class="anchor"></a>Get species lists from GBIF</h2>
 <p>using <code>rgbif</code></p>
 <p>Search by geometry</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
-<span class="fu"><a href="reference/spp_list_gbif.html">spp_list_gbif</a></span>(geometry = <span class="kw">geometry</span>, limit = <span class="fl">20</span>)
-</pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">geometry</span> <span class="op">&lt;-</span> <span class="st">"POLYGON((8.98 48.05,15.66 48.05,15.66 45.40,8.98 45.40,8.98 48.05))"</span>
+<span class="fu"><a href="reference/spp_list_gbif.html">spp_list_gbif</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span>, limit <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "Aythya fuligula (Linnaeus, 1758)"    "Columba palumbus Linnaeus, 1758"    
 ## [3] "Erithacus rubecula (Linnaeus, 1758)" "Fringilla coelebs Linnaeus, 1758"   
 ## [5] "Mahonia aquifolium (Pursh) Nutt."    "Phyllostachys Siebold &amp; Zucc."      
 ## [7] "Podarcis muralis (Laurenti, 1768)"   "Prunus laurocerasus L."             
 ## [9] "Rhus typhina L."</code></pre>
 <p>Search by country</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-(<span class="kw">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/spp_list_gbif.html">spp_list_gbif</a></span>(country = <span class="st">'US'</span>, limit = <span class="fl">20</span>))
-</pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">(</span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/spp_list_gbif.html">spp_list_gbif</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">'US'</span>, limit <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##  [1] "Acanthurus coeruleus Bloch &amp; Schneider, 1801"   
 ##  [2] "Agelaius phoeniceus (Linnaeus, 1766)"           
 ##  [3] "Allium triquetrum L."                           
@@ -160,7 +154,7 @@
 <li>License: MIT</li>
 <li>Get citation information for <code>spplist</code> in R doing <code><a href="https://rdrr.io/r/utils/citation.html">citation(package = 'spplist')</a></code>
 </li>
-<li>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</li>
+<li>Please note that the spplist project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</li>
 </ul>
 </div>
 </div>
@@ -179,9 +173,14 @@
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+</ul>
+</div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
 <div class="developers">
